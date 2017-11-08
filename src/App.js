@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import HeaderHome from './HeaderHome';
-import AnunciosHome from './AnunciosHome';
-import FooterHome from './FooterHome';
-import LinkCategoria from './LinkCategoria';
+import HeaderHome from './components/HeaderHome';
+import AnunciosHome from './components/AnunciosHome';
+import FooterHome from './components/FooterHome';
+import LinkCategoria from './components/LinkCategoria';
 
 class App extends Component {
   render() {
