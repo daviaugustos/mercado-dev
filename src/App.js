@@ -13,17 +13,11 @@ class App extends Component {
         <div className='container'>
           <h3>Últimos anúncios</h3>
           <div className='row'>
-            <AnunciosHome />
-            <AnunciosHome />
-            <AnunciosHome />
-            <AnunciosHome />
+            <AnunciosHome dadosAnuncio={{ titulo: 'Jetta 2017', descricao: 'Um excelente carro..', preco: '150000', urlImagem: 'https://d2lli4bm7g1p8y.cloudfront.net/Content/Carros/jetta/produto/versoes/thumb/highline.png' }} />
           </div>
           <h3>Categorias</h3>
           <div className='row'>
-            <LinkCategoria />
-            <LinkCategoria />
-            <LinkCategoria />
-            <LinkCategoria />
+            <LinkCategoria dadosCategoria={{ nome: 'Carros', icone: 'fa-car' }} />
           </div>
         </div>
         <FooterHome />
