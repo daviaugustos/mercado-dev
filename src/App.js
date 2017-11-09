@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import base from './database/base';
 
 import HeaderHome from './components/HeaderHome';
 import AnunciosHome from './components/AnunciosHome';
@@ -6,6 +7,20 @@ import FooterHome from './components/FooterHome';
 import LinkCategoria from './components/LinkCategoria';
 
 class App extends Component {
+
+  constructor(props){
+    super(props);
+
+    base.bindToState('categorias', {
+      context: this,
+      state: 'categoriasView'
+    });
+
+    this.state = {
+      categoriasView: []
+    }
+  }
+
   render() {
     return (
       <div className='App'>
@@ -17,7 +32,9 @@ class App extends Component {
           </div>
           <h3>Categorias</h3>
           <div className='row'>
-            <LinkCategoria dadosCategoria={{ nome: 'Carros', icone: 'fa-car' }} />
+            {
+              this.state.categoriasView.map(objCategoria => <LinkCategoria dadosCategoria={objCategoria} />)
+            }
           </div>
         </div>
         <FooterHome />
