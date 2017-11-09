@@ -8,15 +8,24 @@ import LinkCategoria from './components/LinkCategoria';
 
 class App extends Component {
 
-  constructor(props){
-    super(props);
-
+  bindStates(){
     base.bindToState('categorias', {
       context: this,
       state: 'categoriasView'
     });
+    
+    base.bindToState('anuncios', {
+      context: this,
+      state: 'anunciosView'
+    });
+  }
+  
+  constructor(props){
+    super(props);
 
+    this.bindStates();
     this.state = {
+      anunciosView: [],
       categoriasView: []
     }
   }
@@ -28,7 +37,9 @@ class App extends Component {
         <div className='container'>
           <h3>Últimos anúncios</h3>
           <div className='row'>
-            <AnunciosHome dadosAnuncio={{ titulo: 'Jetta 2017', descricao: 'Um excelente carro..', preco: '150000', urlImagem: 'https://d2lli4bm7g1p8y.cloudfront.net/Content/Carros/jetta/produto/versoes/thumb/highline.png' }} />
+            {
+              this.state.anunciosView.map(objAnuncio => <AnunciosHome dadosAnuncio={objAnuncio} />)
+            }
           </div>
           <h3>Categorias</h3>
           <div className='row'>
