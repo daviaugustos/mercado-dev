@@ -21,4 +21,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # config file
-/src/firebase-config.js
+/src/database/firebase-config.js
